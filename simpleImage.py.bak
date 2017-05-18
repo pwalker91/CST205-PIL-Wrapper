@@ -452,14 +452,14 @@ class rgbImage(object):
                 self.outputFilename = os.path.abspath(outputFilename)
             #END IF/ELSE
             if os.path.isfile(self.outputFilename):
-                print(("{} will be overwritten if this image is saved. ".format(os.path.basename(self.outputFilename))+
+                print("{} will be overwritten if this image is saved. ".format(os.path.basename(self.outputFilename))+
                       "Consider saving to another location."
-                      ))
+                      )
             #END IF
-            print(("Importing image {}".format(self.inputFilename)))
+            print("Importing image {}".format(self.inputFilename))
         else:
             self.width, self.height = width, height
-            print(("Creating Blank Image, {}x{}".format(self.width, self.height)))
+            print("Creating Blank Image, {}x{}".format(self.width, self.height))
         #END IF/ELSE
 
         #Calls self.reset(), as the reset function does what we want to do initially
@@ -588,9 +588,9 @@ class rgbImage(object):
             self.outputFilename = os.path.abspath(os.path.join(dirname, name))
         #END IF/ELSE
         if os.path.isfile(self.outputFilename):
-            print(("{} will be overwritten if this image is saved. ".format(os.path.basename(self.outputFilename))+
+            print("{} will be overwritten if this image is saved. ".format(os.path.basename(self.outputFilename))+
                   "Consider saving to another location."
-                  ))
+                  )
             return False
         #END IF
         return True
@@ -627,7 +627,7 @@ class rgbImage(object):
         # pixels, and each pixel an array of pixel values (R,G,B)
         img_to_array = asarray(self.__as_array())
         Image.fromarray(img_to_array).save(self.outputFilename)
-        print(("File saved at {}".format(self.outputFilename)))
+        print("File saved at {}".format(self.outputFilename))
     #END DEF
 
     def show(self):
